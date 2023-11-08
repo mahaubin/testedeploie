@@ -1,0 +1,194 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/assets/favicon-33ac8bcb.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAiZJREFUOE+Nkk1oE2EQhp/ZKBGsJdm1WFBQ9CbqoYJ4UDx5KYoHf3r0B6qXIAVFalNtLJgN6EWhB4uKeCqC2oOVYg8KhYogiKCnCh5qqUQ2qWmoptndkc2upm20OKfZd755dr53PmF5NGdMYvEToezPUkwPNZxZJEhD0cx2IjIY6S4L2spcj/MvyF8A9ghCe71BTuJ0P/w/gJlpRuJ5IF5v0Cc4PUfD7zurScyvraWzsR9wvrJ0AtPuQAjvrFJA1AQt4yy0QOYnidwRDH0alDdIpetrdaxtGSA7hEgHUEK5idAfeukfopgeqQFiOhxIr9yJDwe0sGMR4HYcq5wHaQYZxvf6MIz34TQMUrh87jdAUErVUZrwqAOS2XYMGYnGP0uh+y5WdgpkIzCDU9lEYs3hYIJ16vLdHVVR7DrAzA4i0ln7n3qbKfROYdn3gDOhgboXz2gNAC1aIV998VjmJo5FgOMxrLYvQCvoDCqnoqaDiFyMNmLjyZsA0KQuc+7zLim9vhUCkrl9GDq+0osDPuJJOgAEHnyuvkxtKY0NhADTDhy/sDJAFPUvIXIjOHfVn0z1F+/XAIKVmwTdVtu58mwJSNgKsifaxjjC/iBvwk2VnSsDQvL6rvq65BGF7uAd1GO9vRvlbSR4QCzM/RROekAw7T6ETCSexkk/WHqVjIEVnw4NXhx/ANntKFattKryjm/Xyg1eJHM7wU+ghoAf+hbzP+H0Tv8CtRDPU2aQYKMAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABDRJREFUWEfFl01sFVUUx3/3PUuJgtA37cLiV2MEqSYopMUEF34FNbrABcYYsS4EE1HRhR/zWm1VOlPcmCBIjCaCxmAgkRUGi7SgoVjUalHMM2INH6IEZlpaK+V1OscM2NK5M69TGoh3987733N+cz7m3lH8z0uNK37GvhdoitHuxDWfG5ePAqLxARj2h8CSqA/pwclfAQ0DE4UYB8AzxWTKj6AojQ0i3INrNl88AMO+G9g+RoB3cMzlFxHAWgNqrACHcE5XQIM/EYiEEmxKYxz4HdRVhZ0rQXnVnKj79sIDGCurId2e6Fj8N3BrX43oplhlpIumhOxpfxD3pSPDtrEzYNgWYCYD0Ilr3hzRZewPgJrRdqXIiWNWyrTbShB/3RgAojCafgIqQ46FZhQLtWA+Htdz0uwK2QMAxeOjbRVyKtflflnF5fkWUFWFAYxVs8HfD4zWeAxRTYp2FEVhCFmBk12dBLDMP5h7d2hfM6hnA+0YAI0mpIISjFrSgZOdh2F/DczXstCCY96VBLDJ6+he7B+9FEVxAoDVDqo65NCnkW6zjkxjAypVrwGcJi8z6Ms6I/aYEvzitTJT+kck8RkoabqalAT1TIcToBbgvtxGZtWtKH9PpOl8HqXb/LgQwCTxcb3PuYyhBACjaTnIGq35TuBmyuHJQVhWhFHxB1CmaTbjmg8VAjAkz3Ev6OFgiQ9qR3wGDOsLUOF6ChtxzUfOObc2otTD4SyoHpxj5fDWqTN2rQTXST+/eq0BgIfwhOrbvSEKMLWhlEnFwYviTJOcW/IYTvajkd+GVQNqfaQMwn245rY4gErpY7+3K3j61aq3bUV8ExrWElDB8Tt6eQz4V9Jfe2zEWLqqHPEPRfoEWYeTfaowwE4fZJbq3XOgAID9KfCg9vR7cbL62IFhdwC3aLCHcToqYPOQXoIK+YeuwZY/6ds9Q4FEAcrqp+BPPgpM1ZqrE2RHJN2wEKVu0vpAQObjmN/oACUyiDO4LZfqa5s9vCfcA4a1CNSWmEDnaZKVONlXdIAifI7nm3PT+3YVAMjY61Hhw+M8I5+VC/twzTk6QPDXd4Nf5eb1fhYHUD8JY3LQ/eHZnhABPp43k/Qldfph9J7XmVt68pMYAMO+E4ir88QQRJ4HNUcHqPGP5DZ0r40FeBt4emLR4napVkQO6gDlMpA76r6mAyxOY8z9DbhGc/U9Q/J6IlRaBd8Ms8KTI3lQ21Hcr410DierARh2FbA3JlAWx7QTATL2myheiNH9DYSvZEgcgNUIKhuZ56HUXHpe/CERoLTxDiTVkqg7OyIRAIVh/wjcqKXqME7+2vFdtxsmYxT/BUxLhtABDOsGUD9HbkfC+7jm0mSH/ykMawuoRcl6HWB60xyUPBDZKP5WemqT0z+8scRaAOr2kB9FCiT8thVx6K5dG/8qTsa/4Ip/AVVRlITFc6F+AAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-192x192-74700589.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-512x512-6714de2b.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office Arena</title>
+  <script type="module" crossorigin src="/assets/loading-7d12a9c9.js"></script>
+  <script type="module" crossorigin src="/assets/bureau-0e9b8ea3.js"></script>
+  <link rel="stylesheet" href="/assets/loading-cf711db9.css">
+  <link rel="stylesheet" href="/assets/bureau-43931b58.css">
+</head>
+
+<body>
+    <!-- LOADING -->
+    <div class="wrapperLoad">
+        <div class="loader">
+            <div class="loadingImg">
+                <img src="/assets/loading-b571a0d9.webp" alt="loading logo">
+            </div>
+            <div class="loadingBar"><span class="loadingProgress"></span></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navRoom">
+        <div class="logo">
+            <a href="/"><img src="/assets/logoWhite-d9978d83.svg"></a>
+        </div>
+        <ul style="display: block !important;">
+            <li><a href="./bureau.html">Retour</a></li>
+            <li><a href="/pages/salle.html">Salles de reunion</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="halfHeader">
+        <div class="title">
+            <span class="hidden">
+                <h1 class="headerTitle">Arena Office VIP</h1>
+            </span>
+            <span class="hidden">
+                <h5 class="headerTitle">🔴 Business Center 🔴 Training & coworking space</h5>
+            </span>
+        </div>
+    </header>
+
+    <!-- NOS ROOM -->
+    <section class="nosOffre">
+        <span class="heading" style="margin-top: 50px;">
+            <h1>OFFICE ARENA VIP</h1>
+            <h2>Office Arena VIP</h2>
+        </span>
+
+        <p class="notaBene animateFromBottom">*Nos frais de location incluent tous les équipements et assistance </p>
+
+        <!-- arena office vip -->
+        <div class="offre">
+            <div class="offre__image animateFromLeft">
+                <img data-enlargable src="/assets/officeArena-9b5a02a6.webp" alt="">
+                <span>
+                    <h1>ARENA</h1>
+                    <h1>OFFICEVIP</h1>
+                </span>
+            </div>
+            <div class="offre__detail animateFromRight">
+                <p> <strong style="color: #f81239;">En quête d'un bureau à la hauteur de vos clients?</strong>
+                    <br> Explorez notre bureau privé VIP, niché dans un cadre calme, spacieux et luxueux, offrant une
+                    connexion internet haut débit et un mobilier de qualité. Disponible en location ponctuelle, notre
+                    espace propose une expérience complète avec des boissons chaudes, du thé ou du café, pour agrémenter
+                    vos visites.
+                </p>
+
+                <span>
+                    <p><b style="font-family: PoppinsExtraBold; color: #f81239;">Tarif journalier : </b> 40 000 Ar*
+                    </p>
+                    <p><b style="font-family: PoppinsExtraBold; color: #f81239;">Tarif demi-journée : </b> 25 000 Ar*
+                    </p>
+                </span>
+            </div>
+        </div>
+
+        <!-- Nos Bureaux -->
+        <span class="heading" style="margin-top: 50px;">
+            <h1>NOS BUREAUX</h1>
+            <h2>Nos Bureaux</h2>
+        </span>
+        <p class="notaBene animateFromBottom">* Ces bureaux sont disponibles pour une location mensuelle à moyen ou long
+            terme.</p>
+
+        <div class="containerBureau">
+            <div class="image">
+                <img data-enlargable src="/assets/2pers-12a81025.webp" alt="">
+                <p>1 - 2 personnes</p>
+            </div>
+            <div class="image2">
+                <img data-enlargable src="/assets/4pers-e9916cf6.webp" alt="">
+                <p>4 personnes</p>
+            </div>
+            <div class="image3">
+                <img data-enlargable src="/assets/15pers-b082011e.webp" alt="">
+                <p>10 - 15 personnes</p>
+            </div>
+            <div class="image4">
+                <img data-enlargable src="/assets/3pers-ac6663a7.webp" alt="">
+                <p>3 personnes</p>
+            </div>
+        </div>
+
+        <!-- Détails -->
+        <span class="heading" style="margin-top: 50px;">
+            <h1>DETAILS</h1>
+            <h2>Détails</h2>
+        </span>
+
+        <p class="paragraphe">Nous offrons des <strong style="color: crimson;">espaces de travail privés</strong>,
+            équipés, sécurisés et connectés, idéaux pour
+            lancer, développer, collaborer ou mener des activités professionnelles efficacement et sans soucis, dès que
+            vous recevez les clés.</p>
+        <p class="paragraphe">Quels que soient votre statut et vos besoins professionnels, nos espaces de travail sont
+            conçus pour vous
+            accueillir. Que vous soyez entrepreneur débutant, dirigeant de PME, professionnel indépendant, entreprise en
+            expansion ou en déplacement international, que vous ayez besoin d'un lieu temporaire ou permanent, nos
+            locaux sont ouverts à toute personne ou organisation recherchant un <strong style="color: crimson;">espace
+                de travail pratique, flexible et
+                prêt à l'emploi.</strong> espace de travail pratique, flexible et
+            prêt à l'emploi.</p>
+        <p class="paragraphe" style="margin-bottom: 150px;">Profitez de nos bureaux privés<strong
+                style="color: crimson;"> disponibles en permanence,
+                24H/24 et 7J/7</strong>. Nos services
+            englobent le nettoyage
+            quotidien, la surveillance, l'entretien régulier ainsi que la fourniture d'une solution de secours en cas de
+            panne d'électricité, assurant ainsi un environnement de travail fiable et sécurisé.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">
+            <img src="/assets/logoWhite-d9978d83.svg" alt="logo">
+        </div>
+        <div class="social">
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/facebook" title="facebook icônes"><img
+                        src="/assets/facebook-c8081842.webp" alt="icon">
+                </a>
+            </span>
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/logo-instagram" title="logo instagram icônes"><img
+                        src="/assets/instagram-74b7a7a6.webp" alt="icon">
+                </a>
+            </span>
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/linkedin" title="linkedin icônes"><img
+                        src="/assets/linkedin-89a063d4.webp" alt="icon">
+                </a>
+            </span>
+        </div>
+        <div class="ourContact">
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/telephone" title="téléphone icônes"><img
+                            src="/assets/telephone-680b68ea.webp" alt="icon">
+                    </a> </span>
+                034 91 213 86 / 032 03 589 16
+            </div>
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/email" title="email icônes"><img
+                            src="/assets/poster-a6b6a9db.webp" alt="icon">
+                    </a></span>
+                contact@arenabusinesscenter.com
+            </div>
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/emplacement" title="emplacement icônes"><img
+                            src="/assets/carte-5df6ef8a.webp" alt="icon">
+                    </a></span>
+                Lot VB 71 Ambatoroka
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &#169; 2023 <a href="https://github.com/AntsaTsaroana">@Antsa_tsaroana</a> </p>
+        </div>
+    </footer>
+
+    
+</body>
+
+</html>

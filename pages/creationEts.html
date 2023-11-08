@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/assets/favicon-33ac8bcb.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAiZJREFUOE+Nkk1oE2EQhp/ZKBGsJdm1WFBQ9CbqoYJ4UDx5KYoHf3r0B6qXIAVFalNtLJgN6EWhB4uKeCqC2oOVYg8KhYogiKCnCh5qqUQ2qWmoptndkc2upm20OKfZd755dr53PmF5NGdMYvEToezPUkwPNZxZJEhD0cx2IjIY6S4L2spcj/MvyF8A9ghCe71BTuJ0P/w/gJlpRuJ5IF5v0Cc4PUfD7zurScyvraWzsR9wvrJ0AtPuQAjvrFJA1AQt4yy0QOYnidwRDH0alDdIpetrdaxtGSA7hEgHUEK5idAfeukfopgeqQFiOhxIr9yJDwe0sGMR4HYcq5wHaQYZxvf6MIz34TQMUrh87jdAUErVUZrwqAOS2XYMGYnGP0uh+y5WdgpkIzCDU9lEYs3hYIJ16vLdHVVR7DrAzA4i0ln7n3qbKfROYdn3gDOhgboXz2gNAC1aIV998VjmJo5FgOMxrLYvQCvoDCqnoqaDiFyMNmLjyZsA0KQuc+7zLim9vhUCkrl9GDq+0osDPuJJOgAEHnyuvkxtKY0NhADTDhy/sDJAFPUvIXIjOHfVn0z1F+/XAIKVmwTdVtu58mwJSNgKsifaxjjC/iBvwk2VnSsDQvL6rvq65BGF7uAd1GO9vRvlbSR4QCzM/RROekAw7T6ETCSexkk/WHqVjIEVnw4NXhx/ANntKFattKryjm/Xyg1eJHM7wU+ghoAf+hbzP+H0Tv8CtRDPU2aQYKMAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABDRJREFUWEfFl01sFVUUx3/3PUuJgtA37cLiV2MEqSYopMUEF34FNbrABcYYsS4EE1HRhR/zWm1VOlPcmCBIjCaCxmAgkRUGi7SgoVjUalHMM2INH6IEZlpaK+V1OscM2NK5M69TGoh3987733N+cz7m3lH8z0uNK37GvhdoitHuxDWfG5ePAqLxARj2h8CSqA/pwclfAQ0DE4UYB8AzxWTKj6AojQ0i3INrNl88AMO+G9g+RoB3cMzlFxHAWgNqrACHcE5XQIM/EYiEEmxKYxz4HdRVhZ0rQXnVnKj79sIDGCurId2e6Fj8N3BrX43oplhlpIumhOxpfxD3pSPDtrEzYNgWYCYD0Ilr3hzRZewPgJrRdqXIiWNWyrTbShB/3RgAojCafgIqQ46FZhQLtWA+Htdz0uwK2QMAxeOjbRVyKtflflnF5fkWUFWFAYxVs8HfD4zWeAxRTYp2FEVhCFmBk12dBLDMP5h7d2hfM6hnA+0YAI0mpIISjFrSgZOdh2F/DczXstCCY96VBLDJ6+he7B+9FEVxAoDVDqo65NCnkW6zjkxjAypVrwGcJi8z6Ms6I/aYEvzitTJT+kck8RkoabqalAT1TIcToBbgvtxGZtWtKH9PpOl8HqXb/LgQwCTxcb3PuYyhBACjaTnIGq35TuBmyuHJQVhWhFHxB1CmaTbjmg8VAjAkz3Ev6OFgiQ9qR3wGDOsLUOF6ChtxzUfOObc2otTD4SyoHpxj5fDWqTN2rQTXST+/eq0BgIfwhOrbvSEKMLWhlEnFwYviTJOcW/IYTvajkd+GVQNqfaQMwn245rY4gErpY7+3K3j61aq3bUV8ExrWElDB8Tt6eQz4V9Jfe2zEWLqqHPEPRfoEWYeTfaowwE4fZJbq3XOgAID9KfCg9vR7cbL62IFhdwC3aLCHcToqYPOQXoIK+YeuwZY/6ds9Q4FEAcrqp+BPPgpM1ZqrE2RHJN2wEKVu0vpAQObjmN/oACUyiDO4LZfqa5s9vCfcA4a1CNSWmEDnaZKVONlXdIAifI7nm3PT+3YVAMjY61Hhw+M8I5+VC/twzTk6QPDXd4Nf5eb1fhYHUD8JY3LQ/eHZnhABPp43k/Qldfph9J7XmVt68pMYAMO+E4ir88QQRJ4HNUcHqPGP5DZ0r40FeBt4emLR4napVkQO6gDlMpA76r6mAyxOY8z9DbhGc/U9Q/J6IlRaBd8Ms8KTI3lQ21Hcr410DierARh2FbA3JlAWx7QTATL2myheiNH9DYSvZEgcgNUIKhuZ56HUXHpe/CERoLTxDiTVkqg7OyIRAIVh/wjcqKXqME7+2vFdtxsmYxT/BUxLhtABDOsGUD9HbkfC+7jm0mSH/ykMawuoRcl6HWB60xyUPBDZKP5WemqT0z+8scRaAOr2kB9FCiT8thVx6K5dG/8qTsa/4Ip/AVVRlITFc6F+AAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-192x192-74700589.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-512x512-6714de2b.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Création d'entreprise</title>
+    <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+  <script type="module" crossorigin src="/assets/loading-7d12a9c9.js"></script>
+  <script type="module" crossorigin src="/assets/bureau-0e9b8ea3.js"></script>
+  <link rel="stylesheet" href="/assets/loading-cf711db9.css">
+  <link rel="stylesheet" href="/assets/bureau-43931b58.css">
+</head>
+
+<body>
+    <!-- LOADING -->
+    <div class="wrapperLoad">
+        <div class="loader">
+            <div class="loadingImg">
+                <img src="/assets/loading-b571a0d9.webp" alt="loading logo">
+            </div>
+            <div class="loadingBar"><span class="loadingProgress"></span></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navRoom">
+        <div class="logo">
+            <a href="/"><img src="/assets/logoWhite-d9978d83.svg"></a>
+        </div>
+        <ul style="display: block !important;">
+            <li><a href="/">Accueil</a></li>
+        </ul>
+    </nav>
+
+    <!-- FOR CREATION D'ENTREPRISE -->
+    <!-- <div class="plusEts">
+        <div class="plusEts__details">
+            <h3>Confiez-nous la création de votre entreprise</h3>
+            <p>Frais de création d'entreprise hors frais administratifs</p>
+            <h4>NIF, STAT, et RCS</h4>
+            <p>Livrés en 7 jours</p>
+            <h4>450.000Ar*</h4>
+        </div>
+        <div class="plusEts__image">
+            <img src="../assets/img/image (30).webp" alt="illustration">
+        </div>
+        <span class="fermer">&#9747;</span>
+    </div> -->
+
+    <!-- HEADER -->
+    <header class="halfHeader">
+        <div class="title">
+            <span class="hidden">
+                <h1 class="headerTitle">CREATION D'ENTREPRISE</h1>
+            </span>
+            <span class="hidden">
+                <h5 class="headerTitle">🔴 Business Center 🔴 Training & coworking space</h5>
+            </span>
+        </div>
+    </header>
+
+    <!-- CREATION ENTREPRISE -->
+    <section id="offre" class="nosOffre">
+        <span class="heading">
+            <h1>CREATION ENTREPRISE</h1>
+            <h2>Création Entreprise</h2>
+        </span>
+
+        <p class="notaBene animateFromBottom">*L'édition de tous les papiers sont à notre charge ainsi que les divers
+            déplacements. </p>
+
+        <!-- starting business -->
+        <div class="offre">
+            <div class="offre__detail animateFromBottom">
+                <p>
+                    <strong style="color: #f81239;">NOTRE DÉMARCHE :</strong>
+                </P>
+                <p>Notre équipe est composée de consultants en gestion des affaires, juristes, qui sauront vous
+                    accompagner, vous conseiller, vous orienter durant le processus de création de votre entreprise.
+                    Tous les contrats, statuts sont rédigés soigneusement par nos <strong
+                        style="color: #f81239;">consultants experts </strong> suivant vos besoins.
+                    <br>
+                    <br>
+                    Après réception des dossiers complets à notre niveau, le délai de traitement est de <strong
+                        style="color: #f81239;">05 à 07 jours</strong>
+                    ouvrables. Toutefois, nous ne pouvons garantir les délais de traitement de l’administration sur les
+                    éventuelles demandes d'autorisations et/ ou de permis d'exploitation pour les activités
+                    réglementées.
+                </p>
+            </div>
+            <div class="offre__image animateFromBottom">
+                <img src="/assets/image (24)-a8eba3ec.webp" alt="">
+                <span>
+                    <h1>CONFIEZ VOUS</h1>
+                    <h1>A NOUS</h1>
+                </span>
+            </div>
+            <div class="offre__liste animateFromBottom">
+                <ul>
+                    <p>
+                        <strong style="color: #f81239;">Vous êtes en compagnie d’un professionnel dans la/les :</strong>
+                    </p>
+                    <li>Rédaction des documents relatifs à la création de votre entreprise*</li>
+                    <li>Conseils et accompagnement dans le choix de l’objet social, le statut, le régime fiscal</li>
+                    <li>Démarches administratives et suivi de vos dossiers </li>
+                </ul>
+                <!-- <span>
+                    <button class="button open">En savoir Plus</button>
+                </span> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMICILIATION -->
+    <section id="domiciliation" class="domiciliation">
+        <span class="heading">
+            <h1>DECOUVRIR NOS OFFRES</h1>
+            <h2>Découvrir nos offres</h2>
+        </span>
+
+        <p class="notaBene animateFromBottom">*l'édition de tous les papiers sont à notre charge ainsi que les divers
+            déplacements</p>
+
+        <div class="wrapper">
+            <div class="package animateFromLeft">
+                <div class="name">Starting business</div>
+                <div class="trial" style="color: #f81239;">995.000 Ar / mois</div>
+                <ul>
+                    <li>Création d’entreprise</li>
+                    <li>Domiciliation GOLD</li>
+                    <li>Gestion de la comptabilité </li>
+                    <li>Déclarations fiscales et sociales</li>
+                    <li>Gestion de la paie</li>
+                    <li>Gestion de l’E-réputation et création de vos premiers visuels sur les réseaux sociaux</li>
+                </ul>
+            </div>
+            <div class="package brilliant">
+                <div class="name">Création d'entreprise</div>
+                <div class="price">*l'édition de tous les papiers sont à notre charge ainsi que les divers déplacements
+                </div>
+                <div class="trial" style="color: #011386;">450.000 Ar</div>
+                <ul>
+                    <li>
+                        Frais de création d'entreprise hors frais administratifs
+                    </li>
+                    <li>
+                        <strong style="color: #f81239;">NIF, STAT, et RSC</strong> livrés en 7 jours
+                    </li>
+                </ul>
+            </div>
+            <div class="package animateFromRight">
+                <div class="name">PACK 2 en 1</div>
+                <div class="trial" style="color: #f81239;">450.000 Ar / mois</div>
+                <ul>
+                    <ul>
+                        <li>
+                            Création et domiciliation, remise de 450.000 Ar
+                        </li>
+                        <li>
+                            <strong style="color: #f81239;">NIF, STAT, et RSC</strong> livrés en 7 jours
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ETAPES CREATION D'ENTREPRISE -->
+    <section class="etapes">
+        <h1 style="margin-bottom: 50px;">Création d'entreprise En 4 étapes</h1>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">#1</div>
+                <div class="timeline-content">
+                    <h3>Identification de vos besoins</h3>
+                    <ul>
+                        <li>Prendre contact avec notre service commercial</li>
+                        <li>Recueil de diverses informations nécessaires sur vos activités</li>
+                        <li>Informations sur les documents personnels et juridiques nécessaires à la création</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">#2</div>
+                <div class="timeline-content">
+                    <h3>Orientation et conseils pré-création</h3>
+                    <ul>
+                        <li>Entretien individuel pour mieux cerner votre cœur de métier et les risques y afférents</li>
+                        <li>Procuration de diverses informations nécessaires par rapport à votre activité</li>
+                        <li>Conseils sur le régime fiscal à adopter pour votre activité</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">#3</div>
+                <div class="timeline-content">
+                    <h3>Création de votre entreprise</h3>
+                    <ul>
+                        <li>Rédaction de tous les documents relatifs à la création de votre société ou entreprise</li>
+                        <li>Optimisation des textes et informations : cohérence et pertinence avec l’activité de
+                            l'entreprise</li>
+                        <li>Dépôt et suivi des dossiers auprès des entités administratives responsables</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">#4</div>
+                <div class="timeline-content">
+                    <h3>Livraison des documents et Conseils post-création</h3>
+                    <ul>
+                        <li>Retrait des actes enregistrés auprès de l'administration </li>
+                        <li>Remise des dossiers attestant la création de la société : NIF, STAT, RCS et contrats</li>
+                        <li>Conseils sur les procédures après la création : obligations sociales et fiscales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLUS D'INFORMATION -->
+    <section class="plusInfo" style="margin-bottom: 150px">
+        <h1>Vous desirez obtenir plus d'information</h1>
+        <form class="inputContainer" id="monFormulaire">
+          <div class="input1">
+            <select required class="input input1" id="StatutSociete">
+              <option value=""></option>
+              <option value="Entreprise individuelle">Entreprise individuelle</option>
+              <option value="SARL">SARL</option>
+              <option value="SA">SA</option>
+              <option value="Société civile">Société civile</option>
+            </select>
+            <label class="input-label">-- Statut de votre société --</label>
+          </div>
+          <div class="input2">
+            <input required type="text" class="input" id="entreprise" />
+            <label class="input-label">Nom de votre société</label>
+          </div>
+          <div class="input3">
+            <input required type="text" class="input" id="domaine" />
+            <label class="input-label">Domaine d'activité de votre société</label>
+          </div>
+          <div class="input4">
+            <input required type="mail" class="input" id="email" />
+            <label class="input-label">Votre mail</label>
+          </div>
+          <div class="input5">
+            <input required type="number" class="input" id="telephone" />
+            <label class="input-label">Votre numero de téléphone</label>
+          </div>
+          <div class="input6">
+            <input
+              type="submit"
+              class="input submit"
+              value="Envoyer vos requêtes"
+            />
+          </div>
+        </form>
+      </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">
+            <img src="/assets/logoWhite-d9978d83.svg" alt="logo">
+        </div>
+        <div class="social">
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/facebook" title="facebook icônes"><img
+                        src="/assets/facebook-c8081842.webp" alt="icon">
+                </a>
+            </span>
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/logo-instagram" title="logo instagram icônes"><img
+                        src="/assets/instagram-74b7a7a6.webp" alt="icon">
+                </a>
+            </span>
+            <span>
+                <a href="https://www.flaticon.com/fr/icones-gratuites/linkedin" title="linkedin icônes"><img
+                        src="/assets/linkedin-89a063d4.webp" alt="icon">
+                </a>
+            </span>
+        </div>
+        <div class="ourContact">
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/telephone" title="téléphone icônes"><img
+                            src="/assets/telephone-680b68ea.webp" alt="icon">
+                    </a> </span>
+                034 91 213 86 / 032 03 589 16
+            </div>
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/email" title="email icônes"><img
+                            src="/assets/poster-a6b6a9db.webp" alt="icon">
+                    </a></span>
+                contact@arenabusinesscenter.com
+            </div>
+            <div>
+                <span>
+                    <a href="https://www.flaticon.com/fr/icones-gratuites/emplacement" title="emplacement icônes"><img
+                            src="/assets/carte-5df6ef8a.webp" alt="icon">
+                    </a></span>
+                Lot VB 71 Ambatoroka
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &#169; 2023 <a href="https://github.com/AntsaTsaroana">@Antsa_tsaroana</a> </p>
+        </div>
+    </footer>
+
+    
+</body>
+
+</html>

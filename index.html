@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="/assets/favicon-33ac8bcb.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAiZJREFUOE+Nkk1oE2EQhp/ZKBGsJdm1WFBQ9CbqoYJ4UDx5KYoHf3r0B6qXIAVFalNtLJgN6EWhB4uKeCqC2oOVYg8KhYogiKCnCh5qqUQ2qWmoptndkc2upm20OKfZd755dr53PmF5NGdMYvEToezPUkwPNZxZJEhD0cx2IjIY6S4L2spcj/MvyF8A9ghCe71BTuJ0P/w/gJlpRuJ5IF5v0Cc4PUfD7zurScyvraWzsR9wvrJ0AtPuQAjvrFJA1AQt4yy0QOYnidwRDH0alDdIpetrdaxtGSA7hEgHUEK5idAfeukfopgeqQFiOhxIr9yJDwe0sGMR4HYcq5wHaQYZxvf6MIz34TQMUrh87jdAUErVUZrwqAOS2XYMGYnGP0uh+y5WdgpkIzCDU9lEYs3hYIJ16vLdHVVR7DrAzA4i0ln7n3qbKfROYdn3gDOhgboXz2gNAC1aIV998VjmJo5FgOMxrLYvQCvoDCqnoqaDiFyMNmLjyZsA0KQuc+7zLim9vhUCkrl9GDq+0osDPuJJOgAEHnyuvkxtKY0NhADTDhy/sDJAFPUvIXIjOHfVn0z1F+/XAIKVmwTdVtu58mwJSNgKsifaxjjC/iBvwk2VnSsDQvL6rvq65BGF7uAd1GO9vRvlbSR4QCzM/RROekAw7T6ETCSexkk/WHqVjIEVnw4NXhx/ANntKFattKryjm/Xyg1eJHM7wU+ghoAf+hbzP+H0Tv8CtRDPU2aQYKMAAAAASUVORK5CYII=">
+  <link rel="apple-touch-icon" sizes="57x57" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABDRJREFUWEfFl01sFVUUx3/3PUuJgtA37cLiV2MEqSYopMUEF34FNbrABcYYsS4EE1HRhR/zWm1VOlPcmCBIjCaCxmAgkRUGi7SgoVjUalHMM2INH6IEZlpaK+V1OscM2NK5M69TGoh3987733N+cz7m3lH8z0uNK37GvhdoitHuxDWfG5ePAqLxARj2h8CSqA/pwclfAQ0DE4UYB8AzxWTKj6AojQ0i3INrNl88AMO+G9g+RoB3cMzlFxHAWgNqrACHcE5XQIM/EYiEEmxKYxz4HdRVhZ0rQXnVnKj79sIDGCurId2e6Fj8N3BrX43oplhlpIumhOxpfxD3pSPDtrEzYNgWYCYD0Ilr3hzRZewPgJrRdqXIiWNWyrTbShB/3RgAojCafgIqQ46FZhQLtWA+Htdz0uwK2QMAxeOjbRVyKtflflnF5fkWUFWFAYxVs8HfD4zWeAxRTYp2FEVhCFmBk12dBLDMP5h7d2hfM6hnA+0YAI0mpIISjFrSgZOdh2F/DczXstCCY96VBLDJ6+he7B+9FEVxAoDVDqo65NCnkW6zjkxjAypVrwGcJi8z6Ms6I/aYEvzitTJT+kck8RkoabqalAT1TIcToBbgvtxGZtWtKH9PpOl8HqXb/LgQwCTxcb3PuYyhBACjaTnIGq35TuBmyuHJQVhWhFHxB1CmaTbjmg8VAjAkz3Ev6OFgiQ9qR3wGDOsLUOF6ChtxzUfOObc2otTD4SyoHpxj5fDWqTN2rQTXST+/eq0BgIfwhOrbvSEKMLWhlEnFwYviTJOcW/IYTvajkd+GVQNqfaQMwn245rY4gErpY7+3K3j61aq3bUV8ExrWElDB8Tt6eQz4V9Jfe2zEWLqqHPEPRfoEWYeTfaowwE4fZJbq3XOgAID9KfCg9vR7cbL62IFhdwC3aLCHcToqYPOQXoIK+YeuwZY/6ds9Q4FEAcrqp+BPPgpM1ZqrE2RHJN2wEKVu0vpAQObjmN/oACUyiDO4LZfqa5s9vCfcA4a1CNSWmEDnaZKVONlXdIAifI7nm3PT+3YVAMjY61Hhw+M8I5+VC/twzTk6QPDXd4Nf5eb1fhYHUD8JY3LQ/eHZnhABPp43k/Qldfph9J7XmVt68pMYAMO+E4ir88QQRJ4HNUcHqPGP5DZ0r40FeBt4emLR4napVkQO6gDlMpA76r6mAyxOY8z9DbhGc/U9Q/J6IlRaBd8Ms8KTI3lQ21Hcr410DierARh2FbA3JlAWx7QTATL2myheiNH9DYSvZEgcgNUIKhuZ56HUXHpe/CERoLTxDiTVkqg7OyIRAIVh/wjcqKXqME7+2vFdtxsmYxT/BUxLhtABDOsGUD9HbkfC+7jm0mSH/ykMawuoRcl6HWB60xyUPBDZKP5WemqT0z+8scRaAOr2kB9FCiT8thVx6K5dG/8qTsa/4Ip/AVVRlITFc6F+AAAAAElFTkSuQmCC">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-192x192-74700589.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/android-chrome-512x512-6714de2b.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arena</title>
+  <link rel="stylesheet" type="text/css" href="//use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <script type="module" crossorigin src="/assets/main-6add379d.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/loading-7d12a9c9.js">
+  <link rel="stylesheet" href="/assets/loading-cf711db9.css">
+  <link rel="stylesheet" href="/assets/index-e32ef537.css">
+</head>
+
+<body>
+  <!-- LOADING -->
+  <div class="wrapperLoad">
+    <div class="loader">
+      <div class="loader">
+        <div class="loadingImg">
+          <img src="/assets/loading-b571a0d9.webp" alt="loading logo">
+        </div>
+        <div class="loadingBar"><span class="loadingProgress"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <a href="/"><img src="/assets/logoWhite-d9978d83.svg"></a>
+    </div>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#apropos">A propos</a></li>
+      <li><a href="#service">Nos Services</a></li>
+      <li><a href="#offre">Nos Offres</a></li>
+      <li><a href="#reperage">Repérage</a></li>
+    </ul>
+    <!-- Burger Menu -->
+    <button type="button" aria-label="burger Menu" class="toggle-nav">
+      <span class="line l1"></span>
+      <span class="line l2"></span>
+      <span class="line l3"></span>
+    </button>
+  </nav>
+
+  <!-- Nav Mobile -->
+  <div class="nav-mobile">
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">A-propos</a>
+    <a href="#service">Nos Services</a>
+    <a href="#offre">Nos Offres</a>
+    <a href="#reperage">Reperage</a>
+  </div>
+
+  <!-- HEADER -->
+  <header id="accueil">
+    <div class="title">
+      <span class="hidden">
+        <h1 class="headerTitle">The way to your Success</h1>
+      </span>
+      <span class="hidden">
+        <h5 class="headerTitle">🔴 Business Center 🔴 Training & coworking space</h5>
+      </span>
+    </div>
+    <a href="./pdfs/book_salle_arena.pdf" download class="button btnHeader">Telecharger Notre book de
+      presentation</a>
+  </header>
+
+  <!-- AVANTAGE -->
+  <div class="avantage animateFromBottom">
+    <div class="avantage__item">
+      <a href="./pages/officeArena.html">
+        <p>Location</p>
+        <b>
+          <h5>Bureaux privés</h5>
+        </b>
+      </a>
+    </div>
+    <div class="avantage__item">
+      <a href="./pages/salle.html">
+        <p>Location salles de</p>
+        <b>
+          <h5>Formation / réunion</h5>
+        </b>
+      </a>
+    </div>
+    <div class="avantage__item">
+      <a href="./pages/creationEts.html">
+        <b>
+          <h5>Création</h5>
+        </b>
+        <p>d'entreprise</p>
+      </a>
+    </div>
+    <div class="avantage__item">
+      <a href="./pages/domiciliation.html">
+        <b>
+          <h5>Domiciliation</h5>
+        </b>
+        <p>d'entreprise</p>
+      </a>
+    </div>
+    <div class="avantage__item">
+      <a href="./pages/serviceEts.html">
+        <b>
+          <h5>Services aux</h5>
+        </b>
+        <p>entreprises</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- SECTION APROPOS -->
+  <section id="apropos" class="apropos">
+    <span class="heading">
+      <h1>A PROPOS</h1>
+      <h2>A propos</h2>
+    </span>
+    <p class="animateFromBottom">Découvrez l'excellence chez <strong style="color: #f81239;">ARENA BUSINESS
+        CENTER</strong> : offrant une gamme
+      complète de services aux
+      entreprises, des salles de formation et de réunion à la pointe de la technologie, des bureaux privés en
+      coworking et des formations professionnelles sur mesure. Faites de votre réussite notre priorité.</p>
+  </section>
+
+  <!-- PARTENAIRES -->
+  <section class="brand">
+    <h1>Nos clients et partenaires</h1>
+    <p class="animateFromBottom">En nous rejoignant en tant que partenaires, <strong style="color: #f81239;">vous aurez
+        plusieurs avantages</strong> sur tous
+      nos services. Nous adaptons nos offres suivant vos besoins d’installations.</p>
+
+    <div class="containerLogo">
+      <div class="brand-wheel">
+        <div class="brand-slide">
+          <div class="logo-div">
+            <img alt="#" src="data:image/webp;base64,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">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__1-46ac9e7b.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__2-441bb12d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__5-9672275d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__6-bb35dd37.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__7-00a2d243.webp">
+          </div>
+        </div>
+        <!-- Repeat logo -->
+        <div class="brand-slide delay">
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__1-46ac9e7b.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__2-441bb12d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__5-9672275d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__6-bb35dd37.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__7-00a2d243.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="data:image/webp;base64,UklGRmIFAABXRUJQVlA4WAoAAAAgAAAAmQAAlQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggdAMAAHAZAJ0BKpoAlgA+bTSYR6QjIqEmcznogA2JY27dXoepn4rYA+5cks2H/K6BP+AegD+Afx71mPQBpktlJ+S/6rFMH4Z1DWbbeRt66IXPEuoICJdQQETree5Sqz475mlLguh/rrkHFOugAkYfp2gJVqHcHaGzuQWZpmtT5ukmj3clFosKQWq+eezkQFksBadVlLBSbAqdMGRBgSEGnkNswFuDM/u2jFf+oRHsGuVoC7zpbAufloKRfQCxo1MYPpEllYD3n0FqElubdn07l4n/Posu+hcAAP70UefiHNDmhyMeMcNidKRwKBXJpZB5pygXkJNS1JQAIeITGazJgACuCUMIlE/yfvOe8t4VKf5EzH6Qc5ekF/eN+gNmRFfB3SlM8pB/3evTJfKv6WrdW4uVhx54/6IzLALCergaQB9ha0c/N0R4HE43X+HmwKlCPvbjc9F/7FDAZjrEDvmt5Vwf62ypk/luogYYK4u4/EzJde4e5w7R217MRXOIDwaI/cyaTxV/7FR06Pz/G9KOPB1P25LqBtaVoZTozds8BJ9UY3LbUSxEHeObYZsqvrAiJNWuemSk8FLKBcBjhAHXV0iI+DkAIuhPUi7a37tIsvFb+sNI9ZMYtXYvEmI3boU9WtPgSQY9YkUWjUNeoAxPkTLy9nFJBQBCfa2yQvz7GYqr03IIjW0572RTe9UCLKHV4RP76+cIYTGahrmXWjPjQ5RMGTKfD98cX5UgEIagdDcIz4tKfXBRQkhruYZHqfRoO5r/ZZHmbe3NmFjIWiZT2SxwnEzflUECqrAjxvduhdJ+Fr1eYzaDQJFkTFdqE8PQTYFTry3GSJzG/PdzriECcGCh/o3vYrtrytU8DDF8WUcJfqwrvjYhkHto50knWxy5dHsfuFSUo+GJDZFo/ugxoDBXOtGrVEVpmOpJIdoBbAfy5w5ux7rMTdNZqQVve/k/l1x+naJZ3G7lvauUFa3STnSKg2upbb6rW6Daz7CQLwy0+sPiYTqXF6yoxnDnaaA4Qyvvjrq+yuUChTtvvJ8h1snxO7wte/CMgniILhbihTgd2PyLT7y9QuodUdswSjc6eGRANSJ9/d/zPq9OhD8s+7KpedLuwcsHroHVegvm/fv17q7UuRF9frAsFw1ZsBH0u6T3S0F6XG5jef8nONOAABDpAAAAAAAA">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- NOS SERVICES -->
+  <section id="service" class="nosService">
+    <span class="heading">
+      <h1>NOS SERVICES</h1>
+      <h2>Nos services</h2>
+    </span>
+    <div class="service">
+      <div class="service__item animateFromLeft">
+        <div class="service__item--icon">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/immobilier"
+            title="immobilier icônes animées"><img src="/assets/maison-bc128485.gif" alt="icon house"></a>
+        </div>
+        <b>
+          <h3>Espaces de Travail Personnalisés</h3>
+        </b>
+        <p>Des espaces de travail flexibles, équipés et <strong style="color: #f81239;">adaptés à vos besoins</strong> ,
+          gérés par notre équipe dédiée, vous
+          libérant des tracas logistiques.</p>
+      </div>
+      <div class="service__item animateFromBottom">
+        <div class="service__item--icon">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/traiter" title="traiter icônes animées"><img
+              src="/assets/poignee-de-main-6b09f9b5.gif" alt="icon main"></a>
+        </div>
+        <b>
+          <h3>Soutien Expert pour les Entrepreneurs</h3>
+        </b>
+        <p>Accompagnement complet dans la création et la <strong style="color: #f81239;">domiciliation
+            d'entreprises</strong> , avec expertise administrative,
+          fiscale et sociale à chaque étape.</p>
+      </div>
+      <div class="service__item animateFromRight">
+        <div class="service__item--icon">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/fusee" title="fusée icônes animées"><img
+              src="/assets/fusee-a5a8e2cc.gif" alt="icon fusée"></a>
+        </div>
+        <b>
+          <h3>Flexibilité et Qualité Exceptionnelle </h3>
+        </b>
+        <p>Services exceptionnels, de la gestion administrative à l'E-réputation, notre équipe est là pour vous
+          accompagner pendant la <strong style="color: #f81239;">création de votre entreprise</strong> , vous permettant
+          ainsi de vous concentrer pleinement sur
+          la croissance de votre activité</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS OFFRES -->
+  <section id="offre" class="nosOffre">
+    <span class="heading">
+      <h1>NOS OFFRES</h1>
+      <h2>Nos offres</h2>
+    </span>
+
+    <!-- starting business -->
+    <div class="offre">
+      <div class="offre__image animateFromTop">
+        <img src="/assets/image (14)-3ade3d09.webp" alt="">
+        <span>
+          <h1>STARTING</h1>
+          <h1>BUSINESS</h1>
+        </span>
+      </div>
+      <div class="offre__detail animateFromTop">
+        <p> <strong style="color: #f81239;">Boostez</strong> votre entreprise avec notre offre exclusive : création,
+          domiciliation et gestion complète de votre
+          société pendant un an. Nos <strong style="color: #f81239;">experts</strong> vous accompagnent de près pour
+          gérer votre comptabilité, les déclarations
+          fiscales et sociales, la paie, votre E-réputation, et même créer vos premiers visuels percutants sur les
+          réseaux sociaux. Libérez votre potentiel, nous nous occupons du reste.</p>
+
+        <span>
+          <h4>Frais de l’offre pour une durée de 12 mois :</h4>
+          <p><b style="font-family: PoppinsExtraBold; color: #f81239;">PACK COMBO 6 :</b> 995.000 AR / mois</p>
+        </span>
+      </div>
+      <div class="offre__liste animateFromTop">
+        <ul>
+          <li>Création d’entreprise</li>
+          <li>Domiciliation GOLD</li>
+          <li>Gestion de la comptabilité </li>
+          <li>Déclarations fiscales et sociales</li>
+          <li>Gestion de la paie</li>
+          <li>Gestion de l’E-réputation et création de vos premiers visuels sur les réseaux sociaux</li>
+        </ul>
+        <span>
+          <h4>En Option : Recrutement de votre équipe</h4>
+          <p>Des experts RH vous guident dans vos recrutements et mettent à disposition les ressources humaines adaptées
+            à vos exigences.</p>
+        </span>
+      </div>
+    </div>
+
+    <!-- online booster business -->
+    <div class="offre booster">
+      <div class="offre__image animateFromBottom">
+        <img src="/assets/image (11)-652bfd8d.webp" alt="">
+        <span>
+          <h1>ONLINE BOOSTER</h1>
+          <h1>BUSINESS</h1>
+        </span>
+      </div>
+      <div class="offre__liste animateFromBottom">
+        <ul>
+          <span>
+            <p>Notre offre comprend la gestion de votre réputation en ligne sur 2 réseaux sociaux aux choix parmi<strong
+                style="color: #f81239;"> Facebook
+                – Instagram et LinkedIn</strong> </p>
+          </span>
+          <li> L’octroi d’une adresse de référence pour vos clients</li>
+          <li>Conception graphique : Banner page de couverture et photo de profil</li>
+          <li>Création de 12 contenus visuels et rédactionnels</li>
+          <li>Une Séance de shooting professionnel</li>
+          <li>Boost page/publication facebook de 10 jours/ mois</li>
+          <li><b style="color: #f81239;">En bonus :</b> Une place sur un présentoir testeur de produits dans notre
+            showroom ou un accès de 8h dans
+            notre bureau privé VIP.</li>
+        </ul>
+      </div>
+      <div class="offre__detail animateFromBottom">
+        <p><strong style="color: #f81239;">Optimisez</strong> votre présence en ligne avec nous, une solution complète
+          de gestion d'E-réputation. Notre équipe dévouée vous offre des contenus visuels et rédactionnels
+          exceptionnels, des photographies professionnelles de vos produits et un showroom pour des tests clients,
+          boostant ainsi votre <strong style="color: #f81239;">visibilité</strong> et vos ventes sur les réseaux
+          sociaux.</p>
+
+        <span>
+          <h4>Frais de l’offre pour une durée de 3 mois minimun, à partir de <b
+              style="font-family: PoppinsExtraBold; color: #f81239;">495.000 AR / mois</b> </h4>
+        </span>
+      </div>
+    </div>
+
+    <a href="./pages/bureau.html" class="button">Voir plus</a>
+  </section>
+
+  <!-- AUTRE SERVCICES -->
+  <section class="autreService">
+    <span class="heading">
+      <h1>NOS AUTRES SERVICES</h1>
+      <h2>Nos autres services</h2>
+    </span>
+    <div>
+      <div class="autreServiceContainer animateFromTop">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/immobilier"
+            title="immobilier icônes animées"><img src="/assets/maison-bc128485.gif" alt="icon house"></a>
+        </div>
+        <p>Domiciliation de sociétés</p>
+      </div>
+
+      <div class="autreServiceContainer animateFromTop">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/contrat" title="contrat icônes animées"><img
+              src="/assets/contracter-174135a6.gif" alt="icon house"></a>
+        </div>
+        <p>Modification de sociétés</p>
+      </div>
+
+      <div class="autreServiceContainer animateFromTop">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/propriete" title="propriété icônes animées"><img
+              src="/assets/propriete-bb363482.gif" alt="icon house"></a>
+        </div>
+        <p>Représentation de société</p>
+      </div>
+
+      <div class="autreServiceContainer animateFromBottom">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/paiement" title="paiement icônes animées"><img
+              src="/assets/carte-de-credit-4e07d98d.gif" alt="icon house"></a>
+        </div>
+        <p>Demande de VISA Professionnel</p>
+      </div>
+
+      <div class="autreServiceContainer animateFromBottom">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/document" title="document icônes animées"><img
+              src="/assets/poubelle-c3f74af6.gif" alt="icon house"></a>
+        </div>
+        <p>Dissolution de sociétés</p>
+      </div>
+
+      <div class="autreServiceContainer animateFromBottom">
+        <div class="autreServiceContainer__img">
+          <a href="https://www.flaticon.com/fr/icones-animees-gratuite/carte-de-credit"
+            title="carte de crédit icônes animées"><img src="/assets/paiement-e88da95b.gif" alt="icon house"></a>
+        </div>
+        <p>Permis et licences d’exploitations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGE -->
+  <section class="temoignage">
+    <span class="heading">
+      <h1>NOS CLIENTS PARLENT DE NOUS</h1>
+      <h2>Nos client parlent de nous</h2>
+    </span>
+    <section class="splide animateFromBottom" aria-label="...">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="client">
+              <div class="client__image">
+                <div class="client__image--element">
+                  <img src="/assets/rijaniaina-da75b395.webp" alt="illustration">
+                </div>
+              </div>
+              <div class="client__parole">
+                <p>"Satisfait. Connexion internet impeccable.</p>
+                <p>Tsy misy délestage ny quartier."</p>
+
+                <p class="client__parole--auteur"><strong>Rijaniaina RANDRIANOMANANA</strong></p>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="client">
+              <div class="client__image">
+                <div class="client__image--element">
+                  <img src="/assets/julien-7955d531.webp" alt="illustration">
+                </div>
+              </div>
+              <div class="client__parole">
+                <p>Bonjour,</p>
+                <p>J'ai rien à signaler pour le moment pendant les 3 semaines passées, cadre top,
+                  propreté top ...</p>
+                <p>connexion ça va, si c'est possible juste d'ajouter une table et une chaise dans la
+                  salle pour 20
+                  personnes, ce serait vraiment top.</p>
+                <br>
+                <p>Excellente journée à vous</p>
+
+                <p class="client__parole--auteur"><strong> Julien RAJERISON</strong></p>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="client">
+              <div class="client__image">
+                <div class="client__image--element">
+                  <img src="/assets/rojo-9a69eb94.webp" alt="illustration">
+                </div>
+              </div>
+              <div class="client__parole">
+                <p>Hello,</p>
+                <p>J'aimerais juste vous remercier pour votre service.</p>
+                <p>Accueil chaleureux,
+                  c'est le silence total dans les locaux.</p>
+                <p>Pas de coupure de courant et réactivité pendant les prises de rendez-vous.</p>
+                <p>Et le
+                  tout avec une tarif abordable.</p>
+                <p>Je reviens vers vous dans deux semaines.</p>
+                <br>
+                <p>Merci !</p>
+
+                <p class="client__parole--auteur"><strong>Rojo Tahiana</strong></p>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="client">
+              <div class="client__image">
+                <div class="client__image--element">
+                  <img src="/assets/yves-fc5fa9d3.webp" alt="illustration">
+                </div>
+              </div>
+              <div class="client__parole">
+                <p>Bonsoir l'équipe Arena</p>
+                <br>
+                <p>Je tiens à vous remercier ma reconnaissance pour la qualité de votre prestation. Votre équipe a su
+                  s'adapter à toutes nos demandes. Nous avons été ravis de colaborer avec vous et nous vous souhaitons
+                  de prosperer dans votre activité.</p>
+
+                <p class="client__parole--auteur"><strong>Yves Harinosy</strong></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Add the progress bar element -->
+      <div class="my-carousel-progress">
+        <div class="my-carousel-progress-bar"></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- NOS RÉFÉRENCES -->
+  <section class="brand">
+    <span class="heading">
+      <h1>NOS RÉFÉRENCES</h1>
+      <h2>Nos références</h2>
+    </span>
+
+    <div class="containerLogo">
+      <div class="brand-wheel">
+        <div class="brand-slide">
+          <div class="logo-div">
+            <img alt="#" src="data:image/webp;base64,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">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__2-441bb12d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__1-f7a0175e.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__3-38613e08.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__4-b94dcb6d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__6-36baebf2.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__7-496ab297.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__8-0d2d7880.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__9-72ff91af.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__10-3b583b38.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__11-5a6ad2b7.webp">
+          </div>
+        </div>
+        <!-- Repeat logo -->
+        <div class="brand-slide delay">
+          <div class="logo-div">
+            <img alt="#" src="/assets/partenaire__2-441bb12d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__1-f7a0175e.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__3-38613e08.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__4-b94dcb6d.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__6-36baebf2.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__7-496ab297.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__8-0d2d7880.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__9-72ff91af.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__10-3b583b38.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="/assets/confiance__11-5a6ad2b7.webp">
+          </div>
+          <div class="logo-div">
+            <img alt="#" src="data:image/webp;base64,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">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="reperage" style="margin-bottom: 150px;">
+    <span class="heading">
+      <h1>REPERAGE</h1>
+      <h2>Repérage</h2>
+    </span>
+    <div class="contact__group">
+      <!-- LARGE -->
+      <div class="contact__group--left animateFromBottom">
+        <div class="mapouter">
+          <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+              marginheight="0" marginwidth="0"
+              src="https://maps.google.com/maps?width=514&amp;height=514&amp;hl=en&amp;q=Arena Business Center, Tananarive&amp;t=h&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+              href="https://connectionsgame.org/">Connections Puzzle</a></div>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              width: 100%;
+              height: 514px;
+            }
+
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              width: 100%;
+              height: 514px;
+            }
+
+            .gmap_iframe {
+
+              height: 514px !important;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="contact" class="contact__group">
+      <div class="contact__group--right animateFromLeft">
+        <form class="form">
+          <p class="title">Contactez-nous</p>
+          <div class="flex">
+            <label>
+              <input required="" placeholder="" type="text" class="input">
+              <span>Nom</span>
+            </label>
+
+            <label>
+              <input required="" placeholder="" type="email" class="input">
+              <span>Email</span>
+            </label>
+          </div>
+
+          <label>
+            <input required="" placeholder="" type="number" class="input">
+            <span>Numero telephone</span>
+          </label>
+
+          <label>
+            <input required="" placeholder="" type="text" class="input">
+            <span>Nom de votre sociéte</span>
+          </label>
+          <label>
+            <textarea required="" placeholder="Description" type="text" class="input"></textarea>
+          </label>
+          <button class="submit">Envoyer</button>
+        </form>
+      </div>
+      <div class="contact__group--left imgContact animateFromRight">
+        <div class="imgContainer">
+          <img src="./assets/img/image (14).webp" alt="contactImage">
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <img src="/assets/logoWhite-d9978d83.svg" alt="logo">
+    </div>
+    <div class="social">
+      <span>
+        <a href="https://www.flaticon.com/fr/icones-gratuites/facebook" title="facebook icônes"><img
+            src="/assets/facebook-c8081842.webp" alt="icon">
+        </a>
+      </span>
+      <span>
+        <a href="https://www.flaticon.com/fr/icones-gratuites/logo-instagram" title="logo instagram icônes"><img
+            src="/assets/instagram-74b7a7a6.webp" alt="icon">
+        </a>
+      </span>
+      <span>
+        <a href="https://www.flaticon.com/fr/icones-gratuites/linkedin" title="linkedin icônes"><img
+            src="/assets/linkedin-89a063d4.webp" alt="icon">
+        </a>
+      </span>
+    </div>
+    <div class="ourContact">
+      <div>
+        <span>
+          <a href="https://www.flaticon.com/fr/icones-gratuites/telephone" title="téléphone icônes"><img
+              src="/assets/telephone-680b68ea.webp" alt="icon">
+          </a> </span>
+        034 91 213 86 / 032 03 589 16
+      </div>
+      <div>
+        <span>
+          <a href="https://www.flaticon.com/fr/icones-gratuites/email" title="email icônes"><img
+              src="/assets/poster-a6b6a9db.webp" alt="icon">
+          </a></span>
+        contact@arenabusinesscenter.com
+      </div>
+      <div>
+        <span style="margin-bottom: 5px;">
+          <a href="https://www.flaticon.com/fr/icones-gratuites/emplacement" title="emplacement icônes"><img
+              src="/assets/carte-5df6ef8a.webp" alt="icon">
+          </a></span>
+        Lot VB 71 Ambatoroka
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>Copyright &#169; 2023 <a href="https://github.com/AntsaTsaroana">@Antsa_tsaroana</a> </p>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
